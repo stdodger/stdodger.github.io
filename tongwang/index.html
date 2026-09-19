@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="同网 - 您的一站式网络资源聚合与共享平台，提供最新的网络资讯、技术教程、软件工具及生活分享，致力于打造纯净、高效的互联网连接体验。">
+    <meta name="keywords" content="同网,网络资源,共享平台,网络资讯,技术教程,软件下载">
+    <title>同网-网络资源聚合与共享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --radius-md: 8px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 1rem;
+            max-width: 200px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0.25rem 0.75rem;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 0.25rem;
+            font-size: 0.9rem;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-body);
+        }
+
+        .link-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .link-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .link-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .link-list span {
+            font-size: 0.8rem;
+            background: var(--bg-body);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>同网</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">网络资讯</a>
+                <a href="#">技术教程</a>
+                <a href="#">软件工具</a>
+                <a href="#">资源下载</a>
+                <a href="#">关于我们</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索资源、教程或新闻...">
+                    <button>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+                <a href="#" class="btn btn-primary">登录 / 注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-tags">
+                        <span class="tag">网络聚合</span>
+                        <span class="tag">资源共享</span>
+                        <span class="tag">纯净社区</span>
+                    </div>
+                    <h1>连接世界，共享智慧</h1>
+                    <p>同网致力于为您提供最优质的互联网资源整合服务。从前沿科技资讯到实用工具软件，从深度技术教程到生活百科，我们构建了一个开放、高效、值得信赖的在线知识共享平台。</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">开始探索</a>
+                        <a href="#" class="btn btn-outline">了解更多</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Using a generic network visualization image -->
+                    <img src="https://picsum.photos/seed/networktech/600/350" alt="同网平台网络连接示意图">
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Features Grid -->
+            <section class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>极速聚合</h3>
+                    <p>智能算法实时抓取全网优质资源，打破信息孤岛，让您在第一时间获取最新资讯与工具。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>安全可靠</h3>
+                    <p>严格审核上传内容，提供绿色无毒的下载环境，保障您的设备安全与隐私不受侵犯。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>深度教程</h3>
+                    <p>汇聚行业专家经验，提供详尽的技术文档与操作指南，帮助新手快速上手，高手精进技能。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>互助社区</h3>
+                    <p>活跃的用户讨论氛围，遇到问题可在社区提问，与志同道合的伙伴共同交流学习。</p>
+                </div>
+            </section>
+
+            <div class="content-wrapper">
+                <!-- Main Content Area -->
+                <div class="main-content">
+                    <!-- Latest News Section -->
+                    <section class="section">
+                        <div class="section-title">
+                            <span>最新动态</span>
+                            <a href="#" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">查看更多</a>
+                        </div>
+                        <div class="grid-layout">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="https://picsum.photos/seed/tech1/400/250" alt="人工智能发展">
+                                    <span class="card-badge">科技</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-meta">2023-10-24 · 阅读量 1.2k</div>
+                                    <h3 class="card-title"><a href="#">人工智能在Web3.0时代的应用前景分析</a></h3>
+                                    <p class="card-desc">随着Web3.0技术的成熟，AI正逐渐渗透到去中心化网络构建的各个层面...</p>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">阅读全文</a>
+                                        <div class="stat-item">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                            45
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="https://picsum.photos/seed/code/400/250" alt="编程开发">
+                                    <span class="card-badge">开发</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-meta">2023-10-22 · 阅读量 890</div>
+                                    <h3 class="card-title"><a href="#">2024年前端开发技术栈趋势预测</a></h3>
+                                    <p class="card-desc">从Rust在工具链的普及到CSS新特性的落地，前端开发将迎来怎样的变革？</p>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">阅读全文</a>
+                                        <div class="stat-item">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                            32
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="https://picsum.photos/seed/design/400/250" alt="UI设计">
+                                    <span class="card-badge">设计</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-meta">2023-10-20 · 阅读量 2.1k</div>
+                                    <h3 class="card-title"><a href="#">极简主义设计风格在现代网页中的应用</a></h3>
+                                    <p class="card-desc">如何通过留白、排版和色彩心理学，打造用户体验极佳的极简网页界面？</p>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">阅读全文</a>
+                                        <div class="stat-item">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                            68
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Tools Section -->
+                    <section class="section">
+                        <div class="section-title">
+                            <span>精选工具</span>
+                            <a href="#" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">更多工具</a>
+                        </div>
+                        <div class="grid-layout">
+                            <article class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">在线Markdown编辑器</h3>
+                                    <p class="card-desc">实时预览，支持多种插件，随时随地记录灵感。</p>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-primary" style="font-size: 0.8rem;">立即使用</a>
+                                        <div class="stat-item">v2.0</div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">图片压缩大师</h3>
+                                    <p class="card-desc">无损压缩，快速处理，节省网站带宽成本。</p>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-primary" style="font-size: 0.8rem;">开始压缩</a>
+                                        <div class="stat-item">在线</div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">JSON格式化工具</h3>
+                                    <p class="card-desc">开发调试必备，支持语法高亮与错误检查。</p>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-primary" style="font-size: 0.8rem;">打开工具</a>
+                                        <div class="stat-item">Web版</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Hot Topics -->
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">热门话题</h4>
+                        <ul class="link-list">
+                            <li><a href="#"># 网络安全防护 <span>3.4k</span></a></li>
+                            <li><a href="#"># 远程办公软件 <span>2.1k</span></a></li>
+                            <li><a href="#"># 开源项目推荐 <span>1.8k</span></a></li>
+                            <li><a href="#"># 云存储方案 <span>1.5k</span></a></li>
+                            <li><a href="#"># 网站建设教程 <span>1.2k</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">资源分类</h4>
+                        <ul class="link-list">
+                            <li><a href="#">操作系统 <span>120</span></a></li>
+                            <li><a href="#">办公软件 <span>85</span></a></li>
+                            <li><a href="#">图像处理 <span>64</span></a></li>
+                            <li><a href="#">视频剪辑 <span>52</span></a></li>
+                            <li><a href="#">系统优化 <span>43</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Ad Placeholder -->
+                    <div class="sidebar-widget" style="background: #e2e8f0; display: flex; align-items: center; justify-content: center; height: 200px; color: #64748b; font-size: 0.9rem;">
+                        广告位
+                    </div>
+                </aside>
+            </div>
+
+            <!-- FAQ Section -->
+            <section class="section">
+                <div class="section-title">常见问题 (FAQ)</div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>同网上的资源都是免费的吗？</h4>
+                        <p>大部分基础资讯和部分工具为免费服务，部分高级会员专属内容或特定软件下载需订阅会员权益。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何确保下载的软件是安全的？</h4>
+                        <p>我们建立了严格的内容审核机制，所有上传资源均经过人工和技术双重扫描，确保无毒无插件。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>我可以投稿自己的文章或工具吗？</h4>
+                        <p>欢迎用户注册账号后提交原创内容，审核通过后即可在“用户贡献”板块展示您的作品。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>网站支持移动端访问吗？</h4>
+                        <p>完全支持，同网已针对手机、平板等移动设备进行了响应式优化，访问体验与PC端一致。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <span>同网</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">连接每一个有价值的网络节点，让信息流动更自由。我们致力于打造最专业的互联网资源共享社区。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速链接</h5>
+                    <ul>
+                        <li><a href="#">关于同网</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>资源导航</h5>
+                    <ul>
+                        <li><a href="#">开发文档</a></li>
+                        <li><a href="#">设计素材</a></li>
+                        <li><a href="#">系统工具</a></li>
+                        <li><a href="#">游戏娱乐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>关注我们</h5>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">GitHub 仓库</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 同网 All Rights Reserved. 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                  </html>
