@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全才招聘网-一站式全能人才招聘平台。提供IT技术、设计创意、市场营销、综合管理等多领域全才岗位发布与求职服务，助力企业精准匹配复合型人才。">
+    <meta name="keywords" content="全才招聘网, 全能人才, 复合型人才, 网站建设, APP开发, UI设计, 市场营销, 招聘平台, 高端人才猎头">
+    <title>全才招聘网-复合型人才与全能岗位的精准对接平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #64748b;
+            --accent-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-white) 0%, #eff6ff 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-box {
+            background: var(--bg-white);
+            padding: 0.75rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 1rem;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* 核心优势 */
+        .features {
+            padding: 3rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 岗位分类 */
+        .categories {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .category-count {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* 推荐岗位 */
+        .jobs-section {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .job-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .job-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            transition: all 0.2s;
+            background: var(--bg-white);
+        }
+
+        .job-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .job-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+        }
+
+        .job-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            object-fit: cover;
+        }
+
+        .job-details h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .job-meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .job-tag {
+            background-color: #f1f5f9;
+            color: var(--secondary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .job-salary {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.125rem;
+        }
+
+        /* 为什么选择我们 */
+        .why-us {
+            padding: 4rem 0;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        .why-us .section-header h2 {
+            color: white;
+        }
+
+        .why-us .section-header p {
+            color: #94a3b8;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .why-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .why-item p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--bg-white);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-light);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .job-actions {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .job-salary {
+                width: 100%;
+                text-align: right;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+                border-radius: var(--radius-lg);
+            }
+
+            .search-box button {
+                width: 100%;
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>全才招聘网</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">职位广场</a>
+                <a href="#">企业入驻</a>
+                <a href="#">人才库</a>
+                <a href="#">关于我们</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>寻找复合型人才，开启全能职业生涯</h1>
+                <p>全才招聘网专注为高成长型企业提供技术、设计、运营、管理全方位的复合型人才解决方案。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="输入职位名称或关键词，例如：全栈开发、运营总监...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>精准匹配</h3>
+                        <p>基于大数据算法，深度分析企业需求与人才技能图谱，实现人岗高度契合。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3>安全可靠</h3>
+                        <p>严格的实名认证与背景调查机制，保障招聘双方的合法权益与信息安全。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>全领域覆盖</h3>
+                        <p>涵盖互联网、金融、教育、制造等十大行业，满足不同类型企业的招聘需求。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门人才领域</h2>
+                    <p>无论您需要的是技术专才还是管理多面手，这里都有适合的岗位</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">💻</div>
+                        <div class="category-title">技术开发</div>
+                        <div class="category-count">1,240 个岗位</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🎨</div>
+                        <div class="category-title">设计创意</div>
+                        <div class="category-count">856 个岗位</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📈</div>
+                        <div class="category-title">市场营销</div>
+                        <div class="category-count">920 个岗位</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛡️</div>
+                        <div class="category-title">网络运维</div>
+                        <div class="category-count">430 个岗位</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">💼</div>
+                        <div class="category-title">综合管理</div>
+                        <div class="category-count">650 个岗位</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📱</div>
+                        <div class="category-title">新媒体运营</div>
+                        <div class="category-count">310 个岗位</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Jobs Section -->
+        <section class="jobs-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>近期热门全才职位</h2>
+                    <p>精选具备多种技能的复合型人才，助力企业降本增效</p>
+                </div>
+                <div class="job-list">
+                    <article class="job-card">
+                        <div class="job-info">
+                            <img src="https://picsum.photos/seed/tech1/100/100" alt="Company Logo" class="job-avatar">
+                            <div class="job-details">
+                                <h3>高级全栈开发工程师</h3>
+                                <div class="job-meta">
+                                    <span>北京 · 互联网</span>
+                                    <span>经验：5-10年</span>
+                                    <span>学历：本科</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-actions">
+                            <span class="job-salary">25k-40k</span>
+                            <a href="#" class="btn btn-outline">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-info">
+                            <img src="https://picsum.photos/seed/tech2/100/100" alt="Company Logo" class="job-avatar">
+                            <div class="job-details">
+                                <h3>产品总监（懂技术+懂运营）</h3>
+                                <div class="job-meta">
+                                    <span>上海 · 电商</span>
+                                    <span>经验：8年以上</span>
+                                    <span>学历：本科</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-actions">
+                            <span class="job-salary">40k-60k</span>
+                            <a href="#" class="btn btn-outline">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-info">
+                            <img src="https://picsum.photos/seed/tech3/100/100" alt="Company Logo" class="job-avatar">
+                            <div class="job-details">
+                                <h3>新媒体运营专家</h3>
+                                <div class="job-meta">
+                                    <span>深圳 · 科技</span>
+                                    <span>经验：3-5年</span>
+                                    <span>学历：大专</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-actions">
+                            <span class="job-salary">15k-25k</span>
+                            <a href="#" class="btn btn-outline">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-info">
+                            <img src="https://picsum.photos/seed/tech4/100/100" alt="Company Logo" class="job-avatar">
+                            <div class="job-details">
+                                <h3>企业信息化架构师</h3>
+                                <div class="job-meta">
+                                    <span>广州 · 制造</span>
+                                    <span>经验：10年以上</span>
+                                    <span>学历：本科</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-actions">
+                            <span class="job-salary">50k-80k</span>
+                            <a href="#" class="btn btn-outline">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="btn btn-primary">查看更多职位</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-us">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择全才招聘网</h2>
+                    <p>我们致力于构建一个连接企业与全能人才的桥梁</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                            人才多维画像
+                        </h3>
+                        <p>我们不仅仅看简历上的工作经历，更通过技能标签、项目经验、软技能评估，构建立体的全才画像。</p>
+                    </div>
+                    <div class="why-item">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            极速响应机制
+                        </h3>
+                        <p>智能简历解析系统，帮助企业快速筛选海量投递，缩短招聘周期，抢占人才先机。</p>
+                    </div>
+                    <div class="why-item">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            灵活用工支持
+                        </h3>
+                        <p>提供全职、兼职、项目制等多种合作模式，灵活满足企业不同发展阶段的人才需求。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">什么是“全才”型人才？</div>
+                        <div class="faq-answer">
+                            全才型人才通常指具备跨领域知识结构和综合技能的人才。他们不仅精通某一专业领域的核心技能，还具备相关联的其他技能，能够独立承担跨部门、跨职能的项目任务，是现代企业降本增效的重要力量。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">企业如何发布招聘需求？</div>
+                        <div class="faq-answer">
+                            注册成为企业账号后，点击“发布职位”按钮，填写职位名称、薪资范围、技能要求及工作地点等信息即可。系统会自动将您的职位推送到符合条件的人才池中。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">网站是否提供简历下载功能？</div>
+                        <div class="faq-answer">
+                            是的，企业会员在审核通过候选人简历后，可以在线预览或下载PDF格式的完整简历，方便您进行更深入的背景调查和评估。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span>全才招聘网</span>
+                    </a>
+                    <p>致力于打造国内最专业的全能型人才招聘服务平台，连接人才与机遇，助力企业高效发展。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>求职指南</h4>
+                    <ul>
+                        <li><a href="#">个人注册</a></li>
+                        <li><a href="#">简历优化</a></li>
+                        <li><a href="#">面试技巧</a></li>
+                        <li><a href="#">薪资行情</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>企业服务</h4>
+                    <ul>
+                        <li><a href="#">企业注册</a></li>
+                        <li><a href="#">职位发布</a></li>
+                        <li><a href="#">人才搜索</a></li>
+                        <li><a href="#">企业认证</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">合作模式</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 全才招聘网 版权所有 | 京ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                                                           </html>
