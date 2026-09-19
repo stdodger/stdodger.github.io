@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专注手抖诊疗的专科医院，提供特发性震颤、帕金森病、甲状腺功能亢进等引起的手抖症状专业诊断与治疗。提供在线咨询、专家预约及康复指导服务。">
+    <meta name="keywords" content="专治手抖的专科医院,手抖治疗,特发性震颤,帕金森,手抖专科,神经内科">
+    <title>专治手抖的专科医院-专业神经内科诊疗与康复中心</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-light: #e3f2fd;
+            --secondary-color: #0088cc;
+            --accent-color: #ff6b6b;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hotline {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .btn-consult {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-consult:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 86, 179, 0.05);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: white;
+            border: 1px solid var(--primary-light);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--bg-white);
+            padding: 30px 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--primary-color);
+        }
+
+        .problem-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--primary-light);
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            border-radius: 50%;
+            color: var(--primary-color);
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Diagnosis & Treatment */
+        .diagnosis-section {
+            background-color: var(--bg-white);
+        }
+
+        .diagnosis-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .diagnosis-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .diagnosis-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .diagnosis-list strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .diagnosis-list span {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #f0f4f8;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #cccccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content, .diagnosis-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .header-inner {
+                padding: 0 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+                专注手抖诊疗中心
+                <span>专科医院</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#problems">常见病因</a></li>
+                    <li><a href="#diagnosis">诊疗优势</a></li>
+                    <li><a href="#faq">患者问答</a></li>
+                    <li><a href="#contact">预约挂号</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:400-123-4567" class="hotline">400-123-4567</a>
+                <a href="#contact" class="btn-consult">在线咨询</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-tags">
+                        <span class="tag">全国连锁</span>
+                        <span class="tag">医保定点</span>
+                        <span class="tag">30年临床经验</span>
+                    </div>
+                    <h1>专治手抖的专科医院<br><span>专业诊疗，还您稳定人生</span></h1>
+                    <p>针对特发性震颤、帕金森病、甲亢等引起的手抖症状，提供精准的病因检测与个性化治疗方案。告别手抖困扰，重拾生活自信。</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn-consult">立即预约专家号</a>
+                        <a href="#problems" class="btn-outline" style="color: var(--primary-color); background: white; border-color: var(--primary-color);">查看病因</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/doctor2/600/400" alt="专业医生团队">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="container">
+            <div class="stats-bar">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>30+</h3>
+                        <p>年临床经验</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50万+</h3>
+                        <p>成功康复案例</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>患者满意度</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>在线咨询服务</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Problems Section -->
+        <section id="problems" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>手抖不仅仅是“紧张”？</h2>
+                    <p>很多患者误以为手抖只是情绪波动或疲劳，实际上这可能是神经系统发出的健康警报。我们的专科医院专注于各类手抖病因的深度解析。</p>
+                </div>
+                <div class="problem-grid">
+                    <article class="problem-card">
+                        <div class="problem-icon">🤚</div>
+                        <h3>特发性震颤</h3>
+                        <p>表现为姿势性震颤，在拿东西、书写或紧张时加重，饮酒后暂时缓解。常被误认为是帕金森病，但进展缓慢。</p>
+                    </article>
+                    <article class="problem-card">
+                        <div class="problem-icon">🧬</div>
+                        <h3>帕金森病</h3>
+                        <p>典型症状为静止性震颤（手在放松状态下抖动），常伴有肌强直、动作迟缓和面部表情减少。</p>
+                    </article>
+                    <article class="problem-card">
+                        <div class="problem-icon">🧪</div>
+                        <h3>甲状腺功能亢进</h3>
+                        <p>简称甲亢，代谢亢进导致交感神经兴奋，引起手部细微震颤，常伴有心慌、多汗、消瘦等症状。</p>
+                    </article>
+                    <article class="problem-card">
+                        <div class="problem-icon">🧠</div>
+                        <h3>神经系统损伤</h3>
+                        <p>如脑梗后遗症、脑外伤或小脑病变，可能影响运动控制功能，导致一侧或双侧肢体手抖。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnosis & Treatment Section -->
+        <section id="diagnosis" class="section diagnosis-section">
+            <div class="container diagnosis-container">
+                <div class="diagnosis-text">
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <h2>为什么选择我们的专科医院？</h2>
+                        <p>我们拥有神经内科领域的资深专家团队，结合先进的检查设备，为您制定科学的治疗方案。</p>
+                    </div>
+                    <ul class="diagnosis-list">
+                        <li>
+                            <strong>精准神经电生理检测</strong>
+                            <span>采用高清视频脑电图及肌电图，捕捉微小的神经信号异常，精准定位病灶。</span>
+                        </li>
+                        <li>
+                            <strong>多学科联合会诊（MDT）</strong>
+                            <span>针对复杂手抖病例，由神经内科、内分泌科、康复科专家共同制定个性化诊疗计划。</span>
+                        </li>
+                        <li>
+                            <strong>中西医结合治疗方案</strong>
+                            <span>在西医药物控制症状的基础上，辅以中医针灸、理疗等康复手段，标本兼治。</span>
+                        </li>
+                        <li>
+                            <strong>全程康复指导</strong>
+                            <span>提供专业的居家康复训练指导，帮助患者改善肢体协调能力，降低复发风险。</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="diagnosis-image">
+                    <img src="https://picsum.photos/seed/clinic/600/500" alt="现代化诊疗设备">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>患者常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>手抖需要做什么检查？</h3>
+                        <p>通常需要进行神经系统查体、头颅MRI或CT、甲状腺功能检查以及视频脑电图监测，以排除器质性病变。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>手抖能治愈吗？</h3>
+                        <p>大多数手抖病因（如特发性震颤）可以通过药物和康复训练得到有效控制，显著改善生活质量。帕金森病目前无法彻底治愈，但可通过治疗延缓病程。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>甲亢引起的手抖怎么治？</h3>
+                        <p>治疗甲亢是根本，控制甲状腺激素水平后，手抖症状通常会随之缓解。建议先进行内分泌科确诊。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>在线咨询后多久能来院？</h3>
+                        <p>我们提供24小时在线咨询服务，您可以根据自身情况随时预约挂号，专家号源通常需提前1-3天预约。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container cta-content">
+                <h2>还在为手抖烦恼？</h2>
+                <p>点击下方按钮，立即与专家进行免费一对一沟通，获取您的专属诊疗建议。</p>
+                <div class="cta-buttons">
+                    <a href="tel:400-123-4567" class="btn-consult" style="background-color: white; color: var(--primary-color);">拨打 400-123-4567</a>
+                    <a href="#" class="btn-outline">填写病情表预约</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        专注手抖诊疗中心
+                    </div>
+                    <p>我们致力于提供最专业的手抖诊疗服务，帮助无数患者重获健康生活。坚持医德为先，技术为本。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">医院简介</a></li>
+                        <li><a href="#">专家团队</a></li>
+                        <li><a href="#">诊疗项目</a></li>
+                        <li><a href="#">患者故事</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>诊疗范围</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">特发性震颤</a></li>
+                        <li><a href="#">帕金森病</a></li>
+                        <li><a href="#">甲亢性震颤</a></li>
+                        <li><a href="#">小脑共济失调</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:400-123-4567">电话：400-123-4567</a></li>
+                        <li><a href="#">地址：北京市朝阳区健康路88号</a></li>
+                        <li><a href="#">邮箱：service@handtremor.com</a></li>
+                        <li><a href="#">门诊时间：8:00 - 17:30</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 专注手抖诊疗中心 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
