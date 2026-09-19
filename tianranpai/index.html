@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天然派-纯净生活与自然护肤指南</title>
+    <meta name="description" content="天然派为您提供专业的天然护肤、有机食品及环保生活指南。探索纯天然成分，远离化学添加，开启健康、绿色、可持续的生活方式。">
+    <meta name="keywords" content="天然派,天然护肤,有机生活,纯天然,环保">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4A7C59; /* 森林绿 */
+            --secondary-color: #8FBC8F; /* 森林浅绿 */
+            --accent-color: #D4A373; /* 暖木色 */
+            --bg-color: #F9F7F2; /* 米白纸张色 */
+            --card-bg: #FFFFFF;
+            --text-main: #2C3333;
+            --text-light: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(74, 124, 89, 0.9), rgba(143, 188, 143, 0.8)), url('https://picsum.photos/seed/nature_hero/1920/800.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #c08b55;
+            transform: translateY(-2px);
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            padding: 5rem 0;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .philosophy-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(74, 124, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .philosophy-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        /* Product Showcase */
+        .showcase {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .product-img {
+            height: 220px;
+            width: 100%;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .btn-link {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 5rem 0;
+        }
+
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-content h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .guide-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .guide-list h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .guide-list p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .sidebar-card {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 1rem;
+        }
+
+        .check-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3333;
+            color: #b0b0b0;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">天然派<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#philosophy" class="active">理念</a></li>
+                    <li><a href="#showcase">甄选</a></li>
+                    <li><a href="#guide">指南</a></li>
+                    <li><a href="#faq">问答</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>回归自然本真</h1>
+                <p>拒绝化学添加，拥抱纯净成分。天然派致力于为您提供源自大自然的健康生活方式与甄选产品。</p>
+                <a href="#showcase" class="cta-button">探索纯净生活</a>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="philosophy">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择天然派？</h2>
+                    <p>天然，不是一种选择，而是一种回归。</p>
+                </div>
+                <div class="philosophy-grid">
+                    <article class="philosophy-card">
+                        <div class="icon-box">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>纯净成分</h3>
+                        <p>我们只选用经过认证的有机植物原料，确保每一滴精华都源自大地，不含有害化学残留。</p>
+                    </article>
+                    <article class="philosophy-card">
+                        <div class="icon-box">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3>温和呵护</h3>
+                        <p>天然配方更贴近人体肌肤pH值，温和无刺激，适合全家老少，包括敏感肌和婴幼儿使用。</p>
+                    </article>
+                    <article class="philosophy-card">
+                        <div class="icon-box">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3>可持续未来</h3>
+                        <p>坚持环保包装与公平贸易采购，减少碳足迹，为地球的可持续发展贡献一份力量。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="showcase" class="showcase">
+            <div class="container">
+                <div class="section-title">
+                    <h2>甄选好物</h2>
+                    <p>严选全球天然好物，为您的生活注入自然活力。</p>
+                </div>
+                
+                <div class="category-tabs">
+                    <button class="tab-btn active">全部</button>
+                    <button class="tab-btn">护肤</button>
+                    <button class="tab-btn">家居清洁</button>
+                    <button class="tab-btn">个人护理</button>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/cream/400/300" alt="芦荟舒缓凝胶" class="product-img">
+                        <div class="product-info">
+                            <span class="product-tag">热销</span>
+                            <h3 class="product-title">有机芦荟舒缓凝胶</h3>
+                            <p class="product-desc">100%纯天然库拉索芦荟提取物，补水保湿，舒缓晒后肌肤。</p>
+                            <div class="product-footer">
+                                <span class="price">¥58.00</span>
+                                <a href="#" class="btn-link">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/oil/400/300" alt="茶树精油" class="product-img">
+                        <div class="product-info">
+                            <span class="product-tag">护发</span>
+                            <h3 class="product-title">澳洲茶树精油</h3>
+                            <p class="product-desc">纯植物萃取，控油蓬松，改善头皮环境，让秀发重回健康。</p>
+                            <div class="product-footer">
+                                <span class="price">¥89.00</span>
+                                <a href="#" class="btn-link">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/soap/400/300" alt="植物洗衣液" class="product-img">
+                        <div class="product-info">
+                            <span class="product-tag">家居</span>
+                            <h3 class="product-title">草本植物洗衣液</h3>
+                            <p class="product-desc">无磷无荧光剂，温和去污，留有淡淡自然清香，适合敏感衣物。</p>
+                            <div class="product-footer">
+                                <span class="price">¥68.00</span>
+                                <a href="#" class="btn-link">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/toner/400/300" alt="玫瑰水喷雾" class="product-img">
+                        <div class="product-info">
+                            <span class="product-tag">护肤</span>
+                            <h3 class="product-title">保加利亚玫瑰水</h3>
+                            <p class="product-desc">二次清洁，舒缓镇静，作为化妆水或定妆喷雾，提升肌肤光泽。</p>
+                            <div class="product-footer">
+                                <span class="price">¥128.00</span>
+                                <a href="#" class="btn-link">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container">
+                <div class="section-title">
+                    <h2>天然生活指南</h2>
+                    <p>掌握辨别技巧，轻松建立您的纯净生活体系。</p>
+                </div>
+                
+                <div class="guide-layout">
+                    <div class="guide-content">
+                        <h3>如何识别真正的天然产品？</h3>
+                        <p>在市场上选择天然产品时，请关注以下几点，避免被“天然”概念误导：</p>
+                        <ul class="guide-list">
+                            <li>
+                                <h4>查看成分表</h4>
+                                <p>天然产品应优先使用植物提取物、精油等成分，而化学合成防腐剂、色素和香精的含量应极低或不含。</p>
+                            </li>
+                            <li>
+                                <h4>认证标识</h4>
+                                <p>寻找国际通用的有机认证标志，如ECOCERT、USDA Organic等，这些标识代表产品通过了严格的第三方检测。</p>
+                            </li>
+                            <li>
+                                <h4>气味与质地</h4>
+                                <p>天然产品往往保留原料本身的淡淡气味，质地可能不如工业产品均匀或过于顺滑，这是正常现象。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <aside>
+                        <div class="sidebar-card">
+                            <h3>避坑小贴士</h3>
+                            <ul class="check-list">
+                                <li>警惕“天然”二字过于模糊的广告语</li>
+                                <li>不要相信“万能天然药”的说法</li>
+                                <li>敏感肌肤使用前建议做皮试</li>
+                                <li>天然产品保质期通常较短</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>天然派的产品适合敏感肌使用吗？</h4>
+                        <p>是的，我们的产品采用低敏配方，去除刺激性香精和酒精。但由于个体差异，建议敏感体质用户在使用新产品前先在耳后进行测试。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>天然产品没有防腐剂，如何保证安全？</h4>
+                        <p>我们使用天然防腐成分（如维生素E、迷迭香提取物）或真空包装技术来延长保质期，在保证安全的同时减少化学添加剂的使用。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>天然派的产品环保吗？</h4>
+                        <p>非常环保。我们的所有包装均采用可回收材料，且生产过程致力于减少碳排放，符合可持续发展的环保标准。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color:white; margin-bottom:1rem; display:block;">天然派<span>.</span></a>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于推广纯净、自然、健康的生活方式，让每个人都能享受大自然的馈赠。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">隐私声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>订阅更新</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">获取最新天然生活资讯与优惠。</p>
+                    <div style="display:flex;">
+                        <input type="email" placeholder="您的邮箱" style="padding:0.5rem; border:none; border-radius:4px 0 0 4px; width:100%;">
+                        <button style="padding:0.5rem 1rem; background:var(--accent-color); border:none; color:white; border-radius:0 4px 4px 0; cursor:pointer;">Go</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 天然派. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
