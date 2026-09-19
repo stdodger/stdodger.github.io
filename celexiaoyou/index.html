@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>策略小游戏 - 经典战争策略与深度益智游戏推荐</title>
+    <meta name="description" content="策略小游戏平台，提供海量战争策略、塔防、模拟经营及益智解谜类小游戏。包含热门单机策略游戏推荐、新手入门指南及高分通关技巧分享。">
+    <meta name="keywords" content="策略小游戏,战争策略游戏,塔防小游戏,模拟经营游戏,益智游戏,单机游戏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--accent-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .game-cover {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .game-card:hover .game-cover img {
+            transform: scale(1.05);
+        }
+
+        .game-info {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .game-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        .btn-play {
+            display: block;
+            width: 100%;
+            padding: 0.6rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-play:hover {
+            background-color: #34495e;
+        }
+
+        /* Featured Strategy Guide */
+        .featured-guide {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .guide-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .guide-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .guide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 4rem 0 2rem 0;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            .main-nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">策略<span>小游戏</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">战争策略</a></li>
+                    <li><a href="#">塔防游戏</a></li>
+                    <li><a href="#">模拟经营</a></li>
+                    <li><a href="#">益智解谜</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">搜索游戏</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>大脑的角斗场</h1>
+            <p>在这里，每一次点击都是深思熟虑的决策。从军团征服到资源管理，体验最纯粹的策略博弈乐趣。</p>
+            <div class="hero-tags">
+                <span class="tag">实时战争</span>
+                <span class="tag">回合制</span>
+                <span class="tag">塔防防御</span>
+                <span class="tag">大逃杀</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Categories -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">游戏分类</h2>
+            </div>
+            <div class="category-grid">
+                <article class="category-card">
+                    <span class="cat-icon">⚔️</span>
+                    <h3 class="cat-name">战争策略</h3>
+                </article>
+                <article class="category-card">
+                    <span class="cat-icon">🛡️</span>
+                    <h3 class="cat-name">塔防</h3>
+                </article>
+                <article class="category-card">
+                    <span class="cat-icon">🏙️</span>
+                    <h3 class="cat-name">模拟经营</h3>
+                </article>
+                <article class="category-card">
+                    <span class="cat-icon">🧩</span>
+                    <h3 class="cat-name">益智解谜</h3>
+                </article>
+                <article class="category-card">
+                    <span class="cat-icon">🏰</span>
+                    <h3 class="cat-name">城市建设</h3>
+                </article>
+                <article class="category-card">
+                    <span class="cat-icon">🎲</span>
+                    <h3 class="cat-name">战棋</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Strategy Guide -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">新手策略指南</h2>
+            </div>
+            <article class="featured-guide">
+                <div class="guide-content">
+                    <h3>如何成为顶尖的指挥官？</h3>
+                    <p>策略类游戏的核心在于资源管理、时机把握与风险控制。无论您是面对即时战略的快节奏对抗，还是回合制游戏的深思熟虑，掌握以下原则将助您一臂之力。</p>
+                    <ul class="guide-list">
+                        <li><strong>优先发展经济：</strong>在大多数策略游戏中，强大的经济是支撑庞大军队和科技研发的基础。</li>
+                        <li><strong>情报先行：</strong>了解对手的动向和布局往往比盲目进攻更能决定胜负。</li>
+                        <li><strong>灵活应变：</strong>死守一种战术往往会被对手破解，根据战局动态调整策略是高手的标志。</li>
+                        <li><strong>利用地形优势：</strong>在战争和塔防游戏中，高地、掩体和障碍物是扭转战局的关键。</li>
+                    </ul>
+                </div>
+                <div class="guide-image">
+                    <img src="https://picsum.photos/seed/strategygame/600/400.jpg" alt="策略游戏指挥示意图">
+                </div>
+            </article>
+        </section>
+
+        <!-- Hot Games Grid -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">热门策略游戏</h2>
+                <span class="section-subtitle">实时更新，精选高评分作品</span>
+            </div>
+            <div class="game-grid">
+                <!-- Game 1 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/war1/400/300.jpg" alt="帝国远征">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">帝国远征</h3>
+                        <p class="game-desc">经典的实时战略游戏，征服整个大陆，建立你的帝国。</p>
+                        <div class="game-meta">
+                            <span>战争策略</span>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <a href="#" class="btn-play">立即开始游戏</a>
+                    </div>
+                </article>
+
+                <!-- Game 2 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/defend2/400/300.jpg" alt="防线卫士">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">防线卫士</h3>
+                        <p class="game-desc">放置类塔防游戏，通过合理的防御塔布局抵御不断来袭的怪物潮。</p>
+                        <div class="game-meta">
+                            <span>塔防</span>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <a href="#" class="btn-play">立即开始游戏</a>
+                    </div>
+                </article>
+
+                <!-- Game 3 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/build3/400/300.jpg" alt="都市建设者">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">都市建设者</h3>
+                        <p class="game-desc">从零开始规划你的城市，平衡交通、能源与居民需求。</p>
+                        <div class="game-meta">
+                            <span>模拟经营</span>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <a href="#" class="btn-play">立即开始游戏</a>
+                    </div>
+                </article>
+
+                <!-- Game 4 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/puzzle4/400/300.jpg" alt="迷宫思维">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">迷宫思维</h3>
+                        <p class="game-desc">考验逻辑与空间想象力的益智解谜游戏，挑战你的大脑极限。</p>
+                        <div class="game-meta">
+                            <span>益智</span>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <a href="#" class="btn-play">立即开始游戏</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title" style="justify-content: center;">常见问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">这些策略游戏支持手机端游玩吗？</div>
+                <div class="faq-answer">
+                    <p>是的，我们的平台支持多种设备。大部分策略小游戏在桌面端和移动端均可流畅运行，部分大作还支持跨平台存档同步。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">玩策略游戏需要联网吗？</div>
+                <div class="faq-answer">
+                    <p>这取决于具体游戏类型。纯单机的模拟经营和战棋游戏通常不需要联网，而包含多人对战或实时数据的战争策略游戏则需要保持网络连接。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何提升游戏胜率？</div>
+                <div class="faq-answer">
+                    <p>提升胜率的关键在于熟悉游戏机制。建议先从简单难度入手，了解每种单位或建筑的特性，多观看高手的对局录像，学习他们的资源分配和战术走位。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于策略小游戏</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">专注于为玩家提供最优质、最纯粹的策略游戏体验。从经典重温到现代创新，我们致力于挖掘每一款值得玩味的策略佳作。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">即时战略 (RTS)</a></li>
+                        <li><a href="#">回合制策略 (TBS)</a></li>
+                        <li><a href="#">策略战棋 (SRPG)</a></li>
+                        <li><a href="#">城市建设</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">新手入门</a></li>
+                        <li><a href="#">游戏下载指南</a></li>
+                        <li><a href="#">常见问题 (FAQ)</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 策略小游戏平台 版权所有. 仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ手风琴效果
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // 关闭所有其他打开的项
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // 如果刚才点击的没有打开，则打开它
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
