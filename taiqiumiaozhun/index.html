@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="台球瞄准技巧专业指南：掌握母球控制、库边反射与假动作，提供从入门到进阶的视觉化训练方法与器材建议。">
+    <meta name="keywords" content="台球瞄准技巧,斯诺克瞄准,台球教学,台球技巧,母球控制">
+    <title>台球瞄准技巧-精准入袋与控制指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 核心技巧卡片网格 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top-color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 50%;
+            color: var(--accent-color);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* 视觉辅助区域 */
+        .visual-guide {
+            background-color: var(--card-bg);
+            padding: 50px 0;
+            margin-bottom: 60px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .guide-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-visual {
+            flex: 1;
+            min-width: 300px;
+            background-color: #eef2f5;
+            height: 350px;
+            border-radius: var(--border-radius);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* CSS 绘制的台球示意图 */
+        .pool-table {
+            width: 80%;
+            height: 80%;
+            background: #27ae60;
+            border: 15px solid #5d4037;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .pocket {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .pocket-tl { left: 0; top: 0; }
+        .pocket-tr { right: 0; top: 0; }
+        .pocket-bl { left: 0; bottom: 0; }
+        .pocket-br { right: 0; bottom: 0; }
+
+        .cue-ball {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .aim-line {
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(15deg);
+            z-index: 1;
+        }
+
+        .target-ball {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #f1c40f;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(150px, 0) rotate(15deg);
+            z-index: 1;
+        }
+
+        /* 常见误区与FAQ */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background: #fcfcfc;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer.open {
+            padding: 20px 30px;
+            max-height: 200px;
+            border-top: 1px solid #eee;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 15px 0; gap: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+            .guide-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">台球<span>大师</span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">瞄准技巧</a></li>
+                <li><a href="#">杆法教学</a></li>
+                <li><a href="#">战术分析</a></li>
+                <li><a href="#">器材选购</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>精准瞄准：台球技术的核心</h1>
+            <p>无论您是初学者还是进阶球手，掌握正确的瞄准逻辑与母球控制是提升成绩的关键。本文将为您拆解从视觉引导到肌肉记忆的完整流程。</p>
+        </div>
+    </section>
+
+    <!-- 核心技巧 Grid -->
+    <section class="container">
+        <div class="section-title">
+            <h2>三大核心瞄准法则</h2>
+            <p>科学的方法能帮助您在比赛中建立稳定的击球信心</p>
+        </div>
+
+        <div class="techniques-grid">
+            <!-- 卡片 1 -->
+            <article class="card">
+                <div class="card-icon">👁️</div>
+                <h3>视觉引导法</h3>
+                <p>这是最基础也是最重要的方法。通过眼睛确认目标球的落袋点，并延伸出一条假想的直线。</p>
+                <ul>
+                    <li><strong>瞄准点：</strong>瞄准目标球的中心点（假设球体为完美的几何体）。</li>
+                    <li><strong>延伸线：</strong>从母球中心指向目标球中心，再延长通过目标球中心。</li>
+                    <li><strong>修正：</strong>考虑母球与目标球的距离，距离越近，瞄准点越接近目标球边缘。</li>
+                </ul>
+            </article>
+
+            <!-- 卡片 2 -->
+            <article class="card">
+                <div class="card-icon">🎯</div>
+                <h3>库边反射法</h3>
+                <p>利用库边的物理反射特性进行逆向瞄准，特别适用于长台进攻和防守。</p>
+                <ul>
+                    <li><strong>计算：</strong>确定目标球撞击库边后的反弹方向。</li>
+                    <li><strong>路径：</strong>瞄准目标球撞击库边后的“假想落袋点”。</li>
+                    <li><strong>应用：</strong>在斯诺克中常用于计算长台薄球的角度。</li>
+                </ul>
+            </article>
+
+            <!-- 卡片 3 -->
+            <article class="card">
+                <div class="card-icon">🧠</div>
+                <h3>假动作与欺骗</h3>
+                <p>通过改变头部位置或击球力度来迷惑对手，使目标球的运动轨迹产生偏差。</p>
+                <ul>
+                    <li><strong>假瞄：</strong>头部微动，实际击球点与瞄准点不同。</li>
+                    <li><strong>力度控制：</strong>看似大力出奇迹，实则轻擦球体边缘。</li>
+                    <li><strong>心理战：</strong>让对手难以判断您的真实意图。</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- 视觉辅助与原理 -->
+    <section class="container">
+        <div class="visual-guide">
+            <div class="guide-content">
+                <div class="guide-text">
+                    <h2>理解瞄准的几何原理</h2>
+                    <p>台球本质上是一个几何问题。在标准台球桌上，母球撞击目标球后，会沿着一条直线将动量传递给目标球，而母球自身则沿入射角的镜像方向反弹。</p>
+                    <br>
+                    <h3>关键点：</h3>
+                    <p>1. <strong>母球中心击打：</strong>这是最稳定的击球方式，除非您需要做旋转（Kiss球或薄球）。</p>
+                    <p>2. <strong>入射角等于反射角：</strong>这是物理学中的基本定律，也是所有台球瞄准计算的基础。</p>
+                </div>
+                <div class="guide-visual">
+                    <!-- 纯 CSS 绘制的台球示意 -->
+                    <div class="pool-table">
+                        <div class="pocket pocket-tl"></div>
+                        <div class="pocket pocket-tr"></div>
+                        <div class="pocket pocket-bl"></div>
+                        <div class="pocket pocket-br"></div>
+                        <div class="aim-line"></div>
+                        <div class="target-ball"></div>
+                        <div class="cue-ball"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="container">
+        <div class="section-title">
+            <h2>常见问题解答</h2>
+        </div>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">瞄准时应该看哪里？</div>
+                <div class="faq-answer">
+                    <p>初学者往往盯着母球看，这会导致视线混乱。正确的做法是：眼睛主要注视目标球的落袋点，同时保持头部稳定。击球瞬间，视线应短暂地确认目标球的中心点，然后迅速回到落袋点或直接闭眼击球。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">为什么我总是瞄不准？</div>
+                <div class="faq-answer">
+                    <p>这通常由以下几个原因导致：1. 头部位置不固定（左右晃动）；2. 击球瞬间手臂动作过大；3. 对球体大小和距离的判断存在误差。建议在练习时使用“架杆”固定手臂，并多次重复练习同一角度。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何提高击球的稳定性？</div>
+                <div class="faq-answer">
+                    <p>稳定性源于“一致性”。这意味着每次击球时，您的架杆姿势、头部位置和出杆动作都应保持高度一致。建议使用镜子练习法，观察自己的动作是否变形。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container" style="padding: 40px 20px; text-align: center; color: var(--text-secondary); border-top: 1px solid #eee;">
+        <p>&copy; 2023 台球大师教学网. 专注于台球技巧分享与教学。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ 交互逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const questions = document.querySelectorAll('.faq-question');
+        
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+                
+                // 关闭所有其他已打开的答案
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    item.classList.remove('open');
+                    item.previousElementSibling.style.color = 'var(--primary-color)';
+                    item.previousElementSibling.style.fontWeight = '600';
+                });
+
+                // 如果点击的是未打开的，则打开它
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    question.style.color = 'var(--accent-color)';
+                    question.style.fontWeight = '700';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
